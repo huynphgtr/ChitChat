@@ -1,0 +1,21 @@
+{
+  "name": "chitchatapp.blazor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "node ./node_modules/@tailwindcss/cli/dist/index.mjs -i ./Styles/input.css -o ./wwwroot/css/tailwind.css --watch",
+    "build-css-prod": "node ./node_modules/@tailwindcss/cli/dist/index.mjs -i ./Styles/input.css -o ./wwwroot/css/tailwind.css --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.10",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "tailwindcss": "^4.1.10"
+  }
+}
