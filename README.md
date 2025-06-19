@@ -1,4 +1,4 @@
-# ChitChat App - Expected Directory Structure
+# ChitChat App - Directory Structure
 
 This repository contains the expected directory structure for the ChitChat application project built with C# and .NET 8.
 
