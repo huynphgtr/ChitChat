@@ -177,8 +177,8 @@ The Blazor project includes a complete Tailwind CSS setup with:
 
 ## 👥 Team
 
-This project structure was created for the PRN212 course team project.
+This project structure was created for the PRN212 + SWP391 course team project.
 
 ## 📄 License
 
-This project is for educational purposes as part of the PRN212 course.
+This project is for educational purposes as part of the PRN212+ SWP391 course.
