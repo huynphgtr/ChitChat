@@ -1,6 +1,6 @@
 # ChitChat App - Directory Structure
 
-This repository contains the expected directory structure for the ChitChat application project built with C# and .NET 8.
+This repository contains the expected directory structure for the ChitChat application project built with C# and .NET 9.
 
 ## 📁 Project Structure
 
@@ -173,7 +173,7 @@ The Blazor project includes a complete Tailwind CSS setup with:
 - This is an **expected directory structure** showing the planned organization
 - Projects are ready for development with basic scaffolding
 - Tailwind CSS is fully configured and ready to use in Blazor project
-- All projects target .NET 8 for consistency
+- All projects target .NET 9 for consistency
 
 ## 👥 Team
 
