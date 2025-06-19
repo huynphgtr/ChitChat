@@ -1,0 +1,15 @@
+# Node modules
+node_modules/
+npm-debug.log*
+
+# Build outputs
+wwwroot/css/tailwind.css
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
