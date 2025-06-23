@@ -1,4 +1,4 @@
-using ChitChatApp.Blazor.Components;
+using ChitChatApp.Blazor.Pages;
 
 var builder = WebApplication.CreateBuilder(args);
 
