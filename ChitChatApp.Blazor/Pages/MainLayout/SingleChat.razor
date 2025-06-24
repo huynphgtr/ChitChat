@@ -1,6 +1,231 @@
 ﻿@page "/singlechat"
-@using Pages.MainLayout
 
-<h1>
-    This is Single Chat page
-</h1>
+<div class="chat-container">
+    <!-- Cột Sidebar Chính (Bên trái) -->
+    <div class="sidebar">
+        <!-- Cột biểu tượng nhỏ -->
+        <div class="icon-bar">
+            <div class="icon-item active">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="icon-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
+            <div class="icon-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+            </div>
+        </div>
+
+        <!-- Cột danh sách bạn bè và tin nhắn -->
+        <div class="friends-list-panel">
+            <div class="friends-header">
+                <strong>Friends</strong>
+            </div>
+            <div class="direct-messages">
+                <div class="dm-header">
+                    <span>DIRECT MESSAGES</span>
+                    <span class="plus-icon">+</span>
+                </div>
+                <ul class="friend-items">
+                    @foreach (var friend in Friends)
+                    {
+                        <li class="friend-item @(friend.IsActive ? "active" : "")">
+                            <img src="@friend.AvatarUrl" alt="Avatar for @friend.Name" class="avatar" />
+                            <div class="friend-info">
+                                <span class="friend-name">@friend.Name</span>
+                                <span class="last-message">@friend.LastMessage</span>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+             <!-- Panel thông tin người dùng ở dưới cùng -->
+            <div class="user-panel-bottom">
+                <div class="user-info">
+                    <img src="https://placehold.co/40x40/FFC0CB/000000?text=S" alt="User Avatar" class="avatar" />
+                    <span class="username">spencercomp</span>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="settings-icon"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06-.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Khu vực nội dung chính -->
+    <div class="main-content">
+        <!-- Header của khu vực chat -->
+        <div class="chat-header">
+            <div class="chat-title">
+                <span>Nelly</span>
+            </div>
+            <div class="header-icons">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 8a3 3 0 1 0-6 0v1h6V8Z"/><path d="M12 1a3 3 0 0 0-3 3v1h6V4a3 3 0 0 0-3-3Z"/><path d="M18 10a12.27 12.27 0 0 1-1.3 5.5l-2.1 3.9a1.2 1.2 0 0 1-2.2 0l-2.1-3.9A12.27 12.27 0 0 1 6 10H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-2Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <div class="search-box">
+                    <input type="text" placeholder="Search" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cửa sổ chat -->
+        <div class="chat-window">
+            @foreach(var message in Conversation)
+            {
+                <div class="message-item @(message.IsSentByUser ? "sent" : "received")">
+                    <div class="message-info">
+                        <span class="sender-name">@message.Sender</span>
+                        <span class="timestamp">@message.Timestamp</span>
+                    </div>
+                    <div class="message-bubble">
+                        @message.Content
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- Thanh nhập liệu (Thanh chat) -->
+        <div class="message-input-bar">
+            <button class="attach-btn">+</button>
+            <input type="text" placeholder="Message" class="message-input" />
+        </div>
+    </div>
+</div>
+
+<style>
+    :root {
+        --bg-main: #FFFFFF;
+        --bg-sidebar: #FEF6F7;
+        --bg-sidebar-panel: #FFF0F2;
+        --bg-user-panel: #FADAE0;
+        --accent-pink: #FF66A0;
+        --text-primary: #1e1e1e;
+        --text-secondary: #5c5c5c;
+        --border-color: #F8D1DA;
+        --input-bg: #FADAE0;
+        --active-bg: #F8D1DA;
+        --sent-bubble-bg: #F8D1DA;
+        --received-bubble-bg: #F3F4F6;
+    }
+
+    /* CSS FIX: Robust Flexbox Layout */
+    .chat-container {
+        display: flex;
+        flex-direction: row; /* Ensure horizontal layout */
+        font-family: 'Inter', sans-serif;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    /* --- Sidebar Styles --- */
+    .sidebar {
+        /* Set a fixed width that does not grow or shrink */
+        flex: 0 0 312px;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+    }
+
+    .icon-bar { flex: 0 0 72px; background-color: var(--bg-sidebar); display: flex; flex-direction: column; align-items: center; padding-top: 12px; gap: 8px; }
+    .icon-item { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s ease; background-color: var(--bg-sidebar-panel); }
+    .icon-item:hover { background-color: var(--accent-pink); color: white; border-radius: 16px; }
+    .icon-item.active { background-color: var(--accent-pink); color: white; border-radius: 16px; }
+    .icon-item svg { width: 24px; height: 24px; }
+    .friends-list-panel { flex: 1 1 auto; background-color: var(--bg-sidebar-panel); display: flex; flex-direction: column; }
+    .friends-header { padding: 16px; font-weight: 600; font-size: 16px; border-bottom: 1px solid var(--border-color); flex-shrink: 0; }
+    .direct-messages { flex-grow: 1; padding: 8px 16px; overflow-y: auto; }
+    .dm-header { display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 700; color: var(--text-secondary); margin-bottom: 8px; }
+    .plus-icon { cursor: pointer; font-size: 20px; }
+    .friend-items { list-style: none; padding: 0; margin: 0; }
+    .friend-item { display: flex; align-items: center; padding: 8px; border-radius: 8px; cursor: pointer; margin-bottom: 4px; }
+    .friend-item:hover, .friend-item.active { background-color: var(--active-bg); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; margin-right: 12px; object-fit: cover; flex-shrink: 0; }
+    .friend-info { display: flex; flex-direction: column; overflow: hidden; }
+    .friend-name { font-weight: 500; }
+    .friend-item.active .friend-name { font-weight: 700; }
+    .last-message { font-size: 14px; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .user-panel-bottom { flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 12px; background-color: var(--bg-user-panel); }
+    .user-info { display: flex; align-items: center; gap: 8px; }
+    .username { font-weight: 600; }
+    .settings-icon { cursor: pointer; }
+
+    /* --- Main Content Styles --- */
+    .main-content {
+        /* Allow this container to grow and fill the remaining space */
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--bg-main);
+        overflow: hidden; /* Important to contain its children */
+    }
+
+    .chat-header { flex-shrink: 0; display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; border-bottom: 1px solid var(--border-color); box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+    .chat-title { font-weight: 600; font-size: 18px; }
+    .header-icons { display: flex; align-items: center; gap: 16px; color: var(--text-secondary); }
+    .header-icons svg { cursor: pointer; }
+    .search-box { display: flex; align-items: center; background-color: var(--bg-sidebar-panel); padding: 4px 8px; border-radius: 4px; }
+    .search-box input { border: none; background: transparent; outline: none; width: 140px; }
+
+    .chat-window { flex-grow: 1; padding: 24px; overflow-y: auto; display: flex; flex-direction: column; gap: 16px; }
+    .message-item { max-width: 70%; display: flex; flex-direction: column; }
+    .message-item.sent { align-self: flex-end; align-items: flex-end; }
+    .message-item.received { align-self: flex-start; align-items: flex-start; }
+    .message-info { display: flex; gap: 8px; align-items: baseline; margin-bottom: 4px; }
+    .sender-name { font-weight: 600; font-size: 14px; }
+    .timestamp { font-size: 12px; color: var(--text-secondary); }
+    .message-bubble { padding: 12px 16px; border-radius: 18px; font-size: 15px; word-break: break-word; }
+    .message-item.sent .message-bubble { background-color: var(--sent-bubble-bg); border-bottom-right-radius: 4px; }
+    .message-item.received .message-bubble { background-color: var(--received-bubble-bg); border-bottom-left-radius: 4px; }
+
+    .message-input-bar { flex-shrink: 0; display: flex; align-items: center; padding: 12px 24px; gap: 16px; border-top: 1px solid var(--border-color); }
+    .attach-btn { width: 40px; height: 40px; border-radius: 50%; border: none; background-color: var(--input-bg); font-size: 24px; font-weight: bold; color: var(--text-primary); cursor: pointer; transition: background-color 0.2s; }
+    .attach-btn:hover { background-color: #F8D1DA; }
+    .message-input { flex-grow: 1; border: none; background-color: var(--input-bg); border-radius: 20px; padding: 12px 20px; outline: none; font-size: 16px; }
+
+</style>
+
+@code {
+    private List<Friend> Friends = new();
+    private List<ChatMessage> Conversation = new();
+
+    protected override void OnInitialized()
+    {
+        // Khởi tạo danh sách bạn bè với tin nhắn xem trước
+        Friends = new List<Friend>
+        {
+            new Friend { Name = "Nelly", AvatarUrl = "https://placehold.co/40x40/9370DB/FFFFFF?text=N", LastMessage = "You: happy birthday to u", IsActive = true },
+            new Friend { Name = "Peppe", AvatarUrl = "https://placehold.co/40x40/3CB371/FFFFFF?text=P", LastMessage = "Hi, how are you today..." },
+            new Friend { Name = "Phibi", AvatarUrl = "https://placehold.co/40x40/FFA500/FFFFFF?text=P", LastMessage = "Hi, how are you today..." },
+            new Friend { Name = "Cap", AvatarUrl = "https://placehold.co/40x40/FFD700/FFFFFF?text=C", LastMessage = "Hi, how are you today..." },
+            new Friend { Name = "Wumpus", AvatarUrl = "https://placehold.co/40x40/1E90FF/FFFFFF?text=W", LastMessage = "Streaming Minecraft" },
+            new Friend { Name = "Locke", AvatarUrl = "https://placehold.co/40x40/8A2BE2/FFFFFF?text=L", LastMessage = "on a hike trip today!" },
+            new Friend { Name = "Clyde", AvatarUrl = "https://placehold.co/40x40/DC143C/FFFFFF?text=C", LastMessage = "Hi, how are you today..." }
+        };
+
+        // Khởi tạo cuộc hội thoại với Nelly
+        Conversation = new List<ChatMessage>
+        {
+            new ChatMessage { Sender = "Nelly", Content = "hi", Timestamp = "07:35 SA", IsSentByUser = false },
+            new ChatMessage { Sender = "You", Content = "hey, nelly", Timestamp = "07:46 SA", IsSentByUser = true },
+            new ChatMessage { Sender = "You", Content = "happy birthday to u", Timestamp = "07:50 SA", IsSentByUser = true }
+        };
+    }
+
+    // Class để đại diện cho một người bạn trong danh sách
+    public class Friend
+    {
+        public string Name { get; set; } = "";
+        public string AvatarUrl { get; set; } = "";
+        public string LastMessage { get; set; } = "";
+        public bool IsActive { get; set; } = false;
+    }
+    
+    // Class để đại diện cho một tin nhắn trong cuộc trò chuyện
+    public class ChatMessage
+    {
+        public string Sender { get; set; } = "";
+        public string Content { get; set; } = "";
+        public string Timestamp { get; set; } = "";
+        public bool IsSentByUser { get; set; } = false;
+    }
+}
