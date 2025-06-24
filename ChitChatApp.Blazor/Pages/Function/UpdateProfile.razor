@@ -1,7 +1,78 @@
-﻿@page "/updateprofile"
-@using Pages.Function
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Ensure the avatar has a perfect circular shape */
+        .profile-avatar {
+            border-radius: 50%; /* Set to 50% for a perfect circle */
+            width: 80px; /* Equivalent to w-20, ensures consistent size */
+            height: 80px; /* Equivalent to h-20, ensures consistent size */
+            display: flex; /* Ensures content is centered */
+            align-items: center; /* Ensures content is vertically centered */
+            justify-content: center; /* Ensures content is horizontally centered */
+        }
+        /* Use Inter font for the entire page */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
 
-<h1>
-    This is Update Profile page
-</h1>
+        /* Adjust border-radius for the main card frame */
+        .profile-card-frame {
+            border-radius: 30px; /* Increase border-radius for the main frame */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Slightly increase shadow */
+        }
+    </style>
+</head>
+<body>
+    @page "/updateprofile"
+    @using Pages.Function
 
+    <div class="relative h-screen bg-gray-800 bg-opacity-70 flex items-center justify-center">
+        <!-- Added 'profile-card-frame' class to the main frame -->
+        <div class="bg-white p-8 shadow-md z-10 profile-card-frame" style="width: 360px;">
+            <h2 class="text-pink-500 text-lg font-bold mb-6 text-left">Profile</h2>
+
+            <div class="relative flex justify-center items-center mb-4">
+                <!-- Current avatar with profile-avatar class -->
+                <div class="profile-avatar bg-pink-500 text-white text-xl font-semibold shadow">
+                    A
+                </div>
+            </div>
+
+            <div class="text-center text-sm font-semibold text-gray-800 mb-6">
+                Nguyen Van A <i class="fas fa-pen ml-1 text-gray-400 hover:text-gray-600 cursor-pointer text-xs"></i>
+            </div>
+
+            <form class="space-y-5">
+                <div>
+                    <label class="block text-xs text-pink-500 font-semibold mb-1">User name</label>
+                    <div class="flex justify-between items-center px-2 py-1">
+                        <span class="text-sm text-gray-800">VanA2000</span>
+                        <i class="fas fa-pen text-gray-400 hover:text-gray-600 cursor-pointer text-xs"></i>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs text-pink-500 font-semibold mb-1">Email</label>
+                    <div class="flex justify-between items-center px-2 py-1">
+                        <span class="text-sm text-gray-800">NguyenVanA@gmail.com</span>
+                        <i class="fas fa-pen text-gray-400 hover:text-gray-600 cursor-pointer text-xs"></i>
+                    </div>
+                </div>
+
+                <div class="flex justify-center pt-2">
+                    <button type="button" class="bg-pink-500 text-white font-semibold px-6 py-2 rounded-full shadow hover:bg-pink-600 text-sm">
+                        Close
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
