@@ -1,28 +1,51 @@
 ﻿@page "/signup"
 @using Pages.Auth
 
-<TForm>
-    <div class="flex flex-col gap-4 w-full max-w-sm mx-auto">
-        <h3 class="text-center text-pink-600 text-lg font-semibold mb-4">Sign up</h3>
+<div class="min-h-screen bg-pink-50 flex flex-col">
+    <div class="flex-grow flex flex-col md:flex-row items-center justify-center px-4 py-10 md:py-16">
 
-        <label class="text-sm text-pink-700">Full Name:</label>
-        <input class="input" placeholder="Full Name" />
+        @* left side *@
+        <div class="w-full max-w-xl lg:w-2/5 pl-0 md:pl-12 mb-10 md:mb-0 text-center md:text-left">
+            <h1 class="text-4xl sm:text-5xl font-semibold text-pink-500 font-sans mb-4 md:mb-6">
+                Welcome to ChitChat App
+            </h1>
+            <p class="text-md sm:text-lg text-gray-700 leading-relaxed font-sans px-4 md:px-0">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+        </div>
 
-        <label class="text-sm text-pink-700">User Name:</label>
-        <input class="input" placeholder="User Name" />
-
-        <label class="text-sm text-pink-700">Email:</label>
-        <input class="input" placeholder="Email" />
-
-        <label class="text-sm text-pink-700">Password:</label>
-        <input class="input" placeholder="Password" type="password" />
-
-        <button class="btn-pink mt-4">Sign up</button>
-
-        <p class="text-xs text-center mt-3 text-gray-500">
-            Have account?
-            <a href="/signin" class="text-pink-500 font-semibold hover:underline">Sign in now</a>
-        </p>
+        @* right side *@
+        <div class="w-full flex justify-center lg:w-2/5 pt-5">
+            <div class="w-full max-w-sm p-6 bg-white border border-gray-300 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold text-center text-pink-500 mb-6">Sign up</h2>
+                <form class="space-y-4">
+                    <div class="pt-3">
+                        <label class="block text-sm mb-1 text-pink-500">Full Name:</label>
+                        <input type="text" class="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-pink-400" />
+                    </div>
+                    <div class="pt-3">
+                        <label class="block text-sm mb-1 text-pink-500">User Name:</label>
+                        <input type="text" class="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-pink-400" />
+                    </div>
+                    <div class="pt-3">
+                        <label class="block text-sm mb-1 text-pink-500">Email:</label>
+                        <input type="email" class="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-pink-400" />
+                    </div>
+                    <div class="pt-3">
+                        <label class="block text-sm mb-1 text-pink-500">Password:</label>
+                        <input type="password" class="w-full border border-gray-300 px-3 py-2" focus="ring-pink-400" />
+                    </div>
+                    <button class="w-full bg-pink-500 text-white font-semibold py-2 rounded hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 mt-5">
+                        Sign up
+                    </button>
+                </form>
+                <p class="text-xs text-center mt-4 text-gray-600">
+                    Have account? <a href="#" class="text-pink-500 font-medium hover:underline">Sign in now</a>
+                </p>
+            </div>
+        </div>
     </div>
-</TForm>
+</div>
+
+
 
