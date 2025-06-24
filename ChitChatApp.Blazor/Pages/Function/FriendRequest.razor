@@ -1,7 +1,620 @@
 ﻿@page "/friendrequest"
-@using Pages.Function
 
-<h1>
-    This is Friend Request Page
-</h1>
+<div class="app-container">
+    <!-- Top global header (very thin, appears to be just background color in the image) -->
+    <div class="top-global-header"></div>
 
+    <!-- Main Layout: Left Sidebar (two parts) | Friend Request Panel -->
+    <div class="main-layout">
+        <!-- Leftmost Icon Bar -->
+        <div class="leftmost-icon-bar">
+            <!-- Discord-like icon at the very top -->
+            <div class="discord-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 13h4v2h-4v-2zm0-4h4v2h-4V11zm0-4h4v2h-4V7z"></path></svg>
+            </div>
+            <div class="icon-bar-items">
+                <!-- People icon - Biểu tượng "nửa con người" bạn đang tìm -->
+                <div class="icon-item active">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+                </div>
+                <!-- Plus icon -->
+                <div class="icon-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </div>
+                <!-- Search icon -->
+                <div class="icon-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 17l-1.636-1.636a6 6 0 10-.707.707L17 17zM19 10a8 8 0 11-16 0 8 8 0 0116 0z"></path></svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Left Sidebar Content Area -->
+        <div class="main-left-sidebar-content">
+            <!-- Friends Header -->
+            <div class="sidebar-friends-header">
+                <strong>ChitChat</strong>
+            </div>
+
+            <!-- Scrollable Direct Messages List -->
+            <div class="direct-messages-list-scrollable">
+                <div class="direct-messages-header-internal">
+                    <span>DIRECT MESSAGES</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="add-icon-black"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </div>
+                <ul class="friend-items-main-sidebar">
+                    <li class="friend-item">
+                        <img src="https://placehold.co/36x36/9370DB/FFFFFF?text=N" class="avatar" />
+                        <div class="friend-info">
+                            <span class="friend-name">Nelly</span>
+                            <span class="friend-status">You: happy birthday to u</span>
+                        </div>
+                    </li>
+                    <li class="friend-item">
+                        <img src="https://placehold.co/36x36/3CB371/FFFFFF?text=P" class="avatar" />
+                        <div class="friend-info">
+                            <span class="friend-name">Peppe</span>
+                            <span class="friend-status">Hi, how are you today...</span>
+                        </div>
+                    </li>
+                    <li class="friend-item">
+                        <img src="https://placehold.co/36x36/FFC0CB/000000?text=P" class="avatar" />
+                        <div class="friend-info">
+                            <span class="friend-name">Phibi</span>
+                            <span class="friend-status">Hi, how are you today...</span>
+                        </div>
+                    </li>
+                    <li class="friend-item">
+                        <img src="https://placehold.co/36x36/FFC0CB/000000?text=C" class="avatar" />
+                        <div class="friend-info">
+                            <span class="friend-name">Cap</span>
+                            <span class="friend-status">Hi, how are you today...</span>
+                        </div>
+                    </li>
+                    <li class="friend-item">
+                        <img src="https://placehold.co/36x36/FFC0CB/000000?text=W" class="avatar" />
+                        <div class="friend-info">
+                            <span class="friend-name">Wumpus</span>
+                            <span class="friend-status">Streaming Minecraft</span>
+                        </div>
+                    </li>
+                    <li class="friend-item">
+                        <img src="https://placehold.co/36x36/FFC0CB/000000?text=L" class="avatar" />
+                        <div class="friend-info">
+                            <span class="friend-name">Locke</span>
+                            <span class="friend-status">on a hike trip today!</span>
+                        </div>
+                    </li>
+                    <li class="friend-item active">
+                        <img src="https://placehold.co/36x36/9370DB/FFFFFF?text=C" class="avatar" />
+                        <div class="friend-info">
+                            <span class="friend-name">Clyde</span>
+                            <span class="friend-status">Playing Among Us</span>
+                        </div>
+                    </li>
+                    <li class="friend-item">
+                        <img src="https://placehold.co/36x36/8A2BE2/FFFFFF?text=G" class="avatar" />
+                        <div class="friend-info">
+                            <span class="friend-name">Group</span>
+                            <span class="friend-status">??????</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- User Panel at the bottom -->
+            <div class="sidebar-user-panel-bottom">
+                <div class="user-info">
+                    <img src="https://placehold.co/32x32/FFC0CB/000000?text=S" class="avatar" />
+                    <span class="username">spencercomp</span>
+                </div>
+                <div class="user-actions">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="settings-icon"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 6.2 19.4l-.06-.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 8.6l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82-.33V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09A1.65 1.65 0 0 0 17.8 4.6l.06.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V11h1.09A1.65 1.65 0 0 0 19.4 15z" /></svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Main Content Area - Friend Request Page -->
+        <div class="right-main-area">
+            <!-- Header của Right Main Content Area -->
+            <div class="main-content-header">
+                <div class="header-left-section">
+                    <span class="friends-title">Friends</span>
+                    <div class="status-tabs">
+                        <button class="header-tab">Online</button>
+                        <button class="header-tab">All</button>
+                        <!-- Nút "Pending" đã được loại bỏ -->
+                    </div>
+                    <button class="add-friend-button">Add Friend</button>
+                </div>
+                <div class="header-right-section">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="navbar-icon"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9zm-4.27 11a2 2 0 0 1-3.46 0"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="navbar-icon"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="navbar-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="navbar-icon"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="navbar-icon"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 6.2 19.4l-.06-.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 8.6l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82-.33V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09A1.65 1.65 0 0 0 17.8 4.6l.06.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V11h1.09A1.65 1.65 0 0 0 19.4 15z" /></svg>
+                </div>
+            </div>
+
+            <!-- Friend Requests Content -->
+            <div class="main-scrollable-content">
+                <div class="friend-requests-container">
+                    <div class="friend-requests-header-main">
+                        <strong>Friend Requests</strong>
+                    </div>
+                    <ul class="friend-request-items">
+                        <li class="friend-request-item">
+                            <img src="https://placehold.co/48x48/F8D1DA/FFFFFF?text=A" class="avatar" />
+                            <div class="request-info">
+                                <span class="request-name">Nguyen Van A</span>
+                                <span class="request-status">Want to make friend with you</span>
+                            </div>
+                            <div class="request-actions">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#228B22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accept-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="reject-icon"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            </div>
+                        </li>
+                        <li class="friend-request-item">
+                            <img src="https://placehold.co/48x48/F8D1DA/FFFFFF?text=A" class="avatar" />
+                            <div class="request-info">
+                                <span class="request-name">Nguyen Van B</span>
+                                <span class="request-status">Want to make friend with you</span>
+                            </div>
+                            <div class="request-actions">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#228B22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accept-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="reject-icon"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            </div>
+                        </li>
+                        <li class="friend-request-item">
+                            <img src="https://placehold.co/48x48/F8D1DA/FFFFFF?text=A" class="avatar" />
+                            <div class="request-info">
+                                <span class="request-name">Nguyen Van C</span>
+                                <span class="request-status">Want to make friend with you</span>
+                            </div>
+                            <div class="request-actions">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#228B22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accept-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="reject-icon"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            </div>
+                        </li>
+                        <li class="friend-request-item">
+                            <img src="https://placehold.co/48x48/F8D1DA/FFFFFF?text=D" class="avatar" />
+                            <div class="request-info">
+                                <span class="request-name">Nguyen Van D</span>
+                                <span class="request-status">Want to make friend with you</span>
+                            </div>
+                            <div class="request-actions">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#228B22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accept-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="reject-icon"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Tổng quan */
+    html, body {
+        height: 100%; /* Make sure html and body take full height */
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        overflow-y: auto; /* Allow scrolling on the entire page */
+        background-color: #F0F0F0;
+    }
+
+    .app-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Ensure it's at least viewport height */
+        background-color: transparent;
+        overflow: visible; /* Allow content to overflow for scrolling on html/body */
+    }
+
+    /* Top global header (very thin, appears to be just background color in the image) */
+    .top-global-header {
+        background-color: #FFC0CB; /* Màu hồng đậm như trong ảnh */
+        height: 10px; /* Chiều cao rất nhỏ, giống như vạch hồng trên cùng */
+        flex-shrink: 0;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Giữ đổ bóng */
+    }
+
+    /* Main Layout (Left Sidebar + Right Main Content Area) */
+    .main-layout {
+        display: flex;
+        flex-grow: 1; /* Allows main layout to take remaining height */
+        overflow: visible; /* Allow content to overflow for scrolling on html/body */
+    }
+
+    /* Leftmost Icon Bar (newly structured) */
+    .leftmost-icon-bar {
+        flex: 0 0 72px; /* Chiều rộng cố định */
+        background-color: #FEF6F7; /* Màu hồng rất nhạt */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px; /* Padding top */
+        border-right: 1px solid #FADAE0;
+        flex-shrink: 0;
+    }
+
+    .discord-icon-wrapper {
+        width: 48px; /* Kích thước icon */
+        height: 48px;
+        border-radius: 50%;
+        background-color: #FFC0CB; /* Màu nền cho icon discord */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px; /* Khoảng cách với các icon bên dưới */
+    }
+
+        .discord-icon-wrapper svg {
+            color: white; /* Màu icon discord */
+        }
+
+    .icon-bar-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px; /* Khoảng cách giữa các icon */
+        flex-grow: 1; /* Đẩy các icon xuống dưới */
+    }
+
+        .icon-bar-items .icon-item {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%; /* Tròn */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #FFF0F2; /* Màu hồng nhạt */
+            cursor: pointer;
+            color: #FF66AA;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+            .icon-bar-items .icon-item.active {
+                background-color: #FF66AA;
+                color: white;
+                border-radius: 16px; /* Bo góc khi active */
+            }
+
+            .icon-bar-items .icon-item:hover:not(.active) {
+                background-color: #F8D1DA;
+            }
+
+
+    /* Main Left Sidebar Content Area (newly structured) */
+    .main-left-sidebar-content {
+        flex: 0 0 250px; /* Chiều rộng cố định cho sidebar trái */
+        background-color: #FFF0F2; /* Màu hồng nhạt */
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid #FADAE0;
+        flex-shrink: 0;
+    }
+
+    /* Friends Header */
+    .sidebar-friends-header {
+        padding: 15px 16px; /* Padding phù hợp */
+        font-weight: 600;
+        font-size: 16px;
+        color: #000;
+        border-bottom: 1px solid #FADAE0; /* Đường viền dưới */
+        flex-shrink: 0;
+    }
+
+    /* Direct Messages section in Left Sidebar (now main scrollable part of this sidebar) */
+    .direct-messages-list-scrollable {
+        flex-grow: 1; /* Cho phép phần này mở rộng và cuộn */
+        overflow-y: auto;
+    }
+
+    .direct-messages-header-internal { /* Header riêng cho DM list */
+        font-size: 11px;
+        font-weight: 700;
+        color: #000;
+        text-transform: uppercase;
+        padding: 10px 16px 5px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .friend-items-main-sidebar {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        .friend-items-main-sidebar .friend-item {
+            display: flex;
+            align-items: center;
+            padding: 6px 16px; /* Padding cho list item */
+            border-radius: 0px; /* Không bo tròn */
+            cursor: pointer;
+            margin-bottom: 0px; /* Không có margin bottom */
+            transition: background-color 0.2s ease;
+        }
+
+            .friend-items-main-sidebar .friend-item.active {
+                background-color: #F8D1DA; /* Màu hồng nhạt khi active */
+                border-left: 4px solid #FF66AA; /* Vạch hồng bên trái khi active */
+                padding-left: 12px; /* Điều chỉnh padding do border-left */
+            }
+
+            .friend-items-main-sidebar .friend-item:hover:not(.active) {
+                background-color: #F8D1DA; /* Màu hồng nhạt khi hover */
+            }
+
+        .friend-items-main-sidebar .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin-right: 12px;
+            object-fit: cover;
+        }
+
+        .friend-items-main-sidebar .friend-info {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            flex-grow: 1;
+        }
+
+        .friend-items-main-sidebar .friend-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .friend-items-main-sidebar .friend-status {
+            font-size: 11px;
+            color: #888;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+
+    /* User Panel at the bottom of Left Sidebar */
+    .sidebar-user-panel-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px;
+        background-color: #FFC0CB;
+        border-top: 1px solid #F8D1DA;
+        flex-shrink: 0;
+    }
+
+        .sidebar-user-panel-bottom .user-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+            .sidebar-user-panel-bottom .user-info .avatar {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+        .sidebar-user-panel-bottom .username {
+            font-weight: 700;
+            color: #000;
+        }
+
+        .sidebar-user-panel-bottom .user-actions svg {
+            color: #000;
+            cursor: pointer;
+        }
+
+
+    /* Right Main Content Area (empty as per the image) */
+    .right-main-area {
+        flex-grow: 1;
+        background-color: #F0F0F0; /* Nền trắng hồng nhạt */
+        display: flex;
+        flex-direction: column;
+        overflow: visible; /* Changed from auto to visible to allow full page scroll */
+    }
+
+    /* Header của Right Main Content Area (chứa Online/All, View A, Search, Add) */
+    .main-content-header {
+        background-color: #FFC0CB;
+        padding: 10px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #000;
+        font-size: 14px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        flex-shrink: 0;
+        min-height: 50px;
+        width: 100%; /* Đảm bảo header chiếm toàn bộ chiều rộng */
+        box-sizing: border-box; /* Bao gồm padding vào chiều rộng */
+    }
+
+    .header-left-section {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Khoảng cách giữa Friends, tabs, button */
+    }
+
+    .friends-title {
+        font-weight: bold;
+        font-size: 18px;
+        color: #000;
+        margin-right: 15px; /* Khoảng cách với tabs */
+        border-right: 1px solid #FADAE0; /* Đường phân cách */
+        padding-right: 15px;
+        height: 30px; /* Đảm bảo chiều cao đường kẻ */
+        display: flex;
+        align-items: center;
+    }
+
+    .status-tabs {
+        display: flex;
+        background-color: transparent; /* Nền trong suốt */
+        border-radius: 9999px;
+        padding: 0; /* Loại bỏ padding */
+        gap: 0px; /* Loại bỏ gap */
+    }
+
+    .header-tab {
+        background-color: transparent;
+        border: none;
+        padding: 8px 12px; /* Điều chỉnh padding */
+        border-radius: 9999px; /* Vẫn bo tròn */
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        color: #888;
+        transition: background-color 0.2s ease, color 0.2s ease, border-bottom 0.2s ease;
+        position: relative; /* Dùng cho underline */
+    }
+    /* Loại bỏ style cho active-pending */
+
+    .add-friend-button {
+        background-color: #FF66AA; /* Màu hồng */
+        color: white;
+        border: none;
+        padding: 8px 12px; /* Padding phù hợp */
+        border-radius: 4px; /* Bo góc nhẹ */
+        font-weight: 500;
+        cursor: pointer;
+        margin-left: 15px; /* Khoảng cách với tabs */
+        transition: background-color 0.2s ease;
+    }
+
+        .add-friend-button:hover {
+            background-color: #E04A9F;
+        }
+
+    .header-right-section {
+        display: flex;
+        align-items: center;
+        gap: 15px; /* Khoảng cách giữa các icon */
+    }
+
+        .header-right-section .navbar-icon {
+            color: #000; /* Icon màu đen */
+            cursor: pointer;
+            width: 22px;
+            height: 22px;
+        }
+
+    /* Friend Requests Container (Card) */
+    .friend-requests-container {
+        background-color: white;
+        border-radius: 8px; /* Bo góc nhẹ hơn */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Đổ bóng nhẹ hơn */
+        padding: 20px; /* Điều chỉnh padding */
+        width: 80%; /* Chiều rộng tương đối */
+        max-width: 600px; /* Max width để không quá lớn */
+        margin-top: 20px; /* Đẩy xuống dưới header */
+        align-self: center; /* Căn giữa card trong main-scrollable-content */
+    }
+
+    .friend-requests-header-main {
+        font-size: 18px; /* Kích thước chữ nhỏ hơn */
+        font-weight: bold;
+        color: #FF66AA; /* Đã đổi màu sang hồng */
+        margin-bottom: 15px; /* Điều chỉnh margin */
+        text-align: left;
+    }
+
+    .friend-request-items {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .friend-request-item {
+        display: flex;
+        align-items: center;
+        padding: 10px 0; /* Padding trên dưới */
+        border-bottom: 1px solid #EEEEEE; /* Đường kẻ phân cách */
+    }
+
+        .friend-request-item:last-child {
+            border-bottom: none; /* Không có đường kẻ cho item cuối */
+        }
+
+        .friend-request-item .avatar {
+            width: 40px; /* Avatar nhỏ hơn một chút */
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+            flex-shrink: 0; /* Không co lại */
+        }
+
+        .friend-request-item .request-info {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* Chiếm hết không gian còn lại */
+            overflow: hidden;
+        }
+
+        .friend-request-item .request-name {
+            font-weight: 600;
+            color: #333;
+            font-size: 15px; /* Kích thước chữ nhỏ hơn */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .friend-request-item .request-status {
+            font-size: 12px; /* Kích thước chữ nhỏ hơn */
+            color: #777;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .friend-request-item .request-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Khoảng cách nhỏ hơn */
+            flex-shrink: 0;
+        }
+
+        .friend-request-item .accept-icon,
+        .friend-request-item .reject-icon {
+            cursor: pointer;
+            width: 22px; /* Kích thước icon nhỏ hơn */
+            height: 22px;
+            border-radius: 50%; /* Icon tròn */
+            padding: 6px; /* Tạo không gian xung quanh icon */
+            transition: background-color 0.2s ease;
+        }
+
+            .friend-request-item .accept-icon:hover {
+                background-color: #D4EDDA; /* Nền xanh nhạt khi hover */
+            }
+
+            .friend-request-item .reject-icon:hover {
+                background-color: #F8D7DA; /* Nền đỏ nhạt khi hover */
+            }
+
+
+    /* Cuộn tùy chỉnh */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #FF66AA;
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: #FFF0F2;
+    }
+</style>
