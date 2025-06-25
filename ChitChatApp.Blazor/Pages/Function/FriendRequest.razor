@@ -1,41 +1,41 @@
 ﻿@page "/friendrequest"
 
 <div class="app-container">
-    <!-- Top global header (very thin, appears to be just background color in the image) -->
+    <!-- Header chung trên cùng  -->
     <div class="top-global-header"></div>
 
-    <!-- Main Layout: Left Sidebar (two parts) | Friend Request Panel -->
+    <!-- Bố cục chính: Thanh bên trái (hai phần) | Bảng yêu cầu kết bạn -->
     <div class="main-layout">
-        <!-- Leftmost Icon Bar -->
+        <!-- Thanh icon ngoài cùng bên trái -->
         <div class="leftmost-icon-bar">
-            <!-- Discord-like icon at the very top -->
+            <!-- Icon phía trên cùng -->
             <div class="discord-icon-wrapper">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 13h4v2h-4v-2zm0-4h4v2h-4V11zm0-4h4v2h-4V7z"></path></svg>
             </div>
             <div class="icon-bar-items">
-                <!-- People icon - Biểu tượng "nửa con người" bạn đang tìm -->
+                <!-- Icon người -->
                 <div class="icon-item active">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
                 </div>
-                <!-- Plus icon -->
+                <!-- Icon dấu cộng -->
                 <div class="icon-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                 </div>
-                <!-- Search icon -->
+                <!-- Icon tìm kiếm -->
                 <div class="icon-item">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 17l-1.636-1.636a6 6 0 10-.707.707L17 17zM19 10a8 8 0 11-16 0 8 8 0 0116 0z"></path></svg>
                 </div>
             </div>
         </div>
 
-        <!-- Main Left Sidebar Content Area -->
+        <!-- Khu vực nội dung chính của thanh bên trái -->
         <div class="main-left-sidebar-content">
-            <!-- Friends Header -->
+            <!-- Tiêu đề bạn bè -->
             <div class="sidebar-friends-header">
                 <strong>ChitChat</strong>
             </div>
 
-            <!-- Scrollable Direct Messages List -->
+            <!-- Danh sách tin nhắn trực tiếp có thể cuộn -->
             <div class="direct-messages-list-scrollable">
                 <div class="direct-messages-header-internal">
                     <span>DIRECT MESSAGES</span>
@@ -101,41 +101,42 @@
                 </ul>
             </div>
 
-            <!-- User Panel at the bottom -->
+            <!-- Bảng người dùng ở cuối -->
             <div class="sidebar-user-panel-bottom">
                 <div class="user-info">
                     <img src="https://placehold.co/32x32/FFC0CB/000000?text=S" class="avatar" />
                     <span class="username">spencercomp</span>
                 </div>
                 <div class="user-actions">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="settings-icon"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 6.2 19.4l-.06-.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 8.6l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82-.33V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09A1.65 1.65 0 0 0 17.8 4.6l.06.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V11h1.09A1.65 1.65 0 0 0 19.4 15z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="settings-icon"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 6.2 19.4l-.06-.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 8.6l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82-.33V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09A1.65 1.65 0 0 0 17.8 4.6l.06.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06-.06a1.65 1.65 0 0 0-.33 1.82V11h1.09A1.65 1.65 0 0 0 19.4 15z" /></svg>
                 </div>
             </div>
         </div>
 
-        <!-- Right Main Content Area - Friend Request Page -->
+        <!-- Khu vực nội dung chính bên phải - Trang yêu cầu kết bạn -->
         <div class="right-main-area">
-            <!-- Header của Right Main Content Area -->
+            <!-- Header của khu vực nội dung chính bên phải -->
             <div class="main-content-header">
                 <div class="header-left-section">
                     <span class="friends-title">Friends</span>
                     <div class="status-tabs">
                         <button class="header-tab">Online</button>
                         <button class="header-tab">All</button>
-                        <!-- Nút "Pending" đã được loại bỏ -->
+                        <!-- Nút icon nửa người -->
+                        <button class="header-tab active-pending">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+                        </button>
                     </div>
-                    <button class="add-friend-button">Add Friend</button>
                 </div>
                 <div class="header-right-section">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="navbar-icon"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9zm-4.27 11a2 2 0 0 1-3.46 0"></path></svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="navbar-icon"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="navbar-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="navbar-icon"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="navbar-icon"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 6.2 19.4l-.06-.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 8.6l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82-.33V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09A1.65 1.65 0 0 0 17.8 4.6l.06.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V11h1.09A1.65 1.65 0 0 0 19.4 15z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="navbar-icon"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 6.2 19.4l-.06-.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 8.6l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82-.33V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09A1.65 1.65 0 0 0 17.8 4.6l.06.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06-.06a1.65 1.65 0 0 0-.33 1.82V11h1.09A1.65 1.65 0 0 0 19.4 15z" /></svg>
                 </div>
             </div>
 
-            <!-- Friend Requests Content -->
+            <!-- Nội dung yêu cầu kết bạn -->
             <div class="main-scrollable-content">
                 <div class="friend-requests-container">
                     <div class="friend-requests-header-main">
@@ -197,44 +198,44 @@
 <style>
     /* Tổng quan */
     html, body {
-        height: 100%; /* Make sure html and body take full height */
+        height: 100%; /* Đảm bảo html và body chiếm toàn bộ chiều cao */
         margin: 0;
         font-family: 'Inter', sans-serif;
-        overflow-y: auto; /* Allow scrolling on the entire page */
+        overflow-y: auto; /* Cho phép cuộn trên toàn bộ trang */
         background-color: #F0F0F0;
     }
 
     .app-container {
         display: flex;
         flex-direction: column;
-        min-height: 100vh; /* Ensure it's at least viewport height */
+        min-height: 100vh; /* Đảm bảo chiều cao tối thiểu bằng chiều cao viewport */
         background-color: transparent;
-        overflow: visible; /* Allow content to overflow for scrolling on html/body */
+        overflow: visible; /* Cho phép nội dung tràn ra để cuộn trên html/body */
     }
 
-    /* Top global header (very thin, appears to be just background color in the image) */
+    /* Header chung trên cùng */
     .top-global-header {
-        background-color: #FFC0CB; /* Màu hồng đậm như trong ảnh */
-        height: 10px; /* Chiều cao rất nhỏ, giống như vạch hồng trên cùng */
+        background-color: #FFC0CB;
+        height: 10px;
         flex-shrink: 0;
         box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Giữ đổ bóng */
     }
 
-    /* Main Layout (Left Sidebar + Right Main Content Area) */
+    /* Bố cục chính (Thanh bên trái + Khu vực nội dung chính bên phải) */
     .main-layout {
         display: flex;
-        flex-grow: 1; /* Allows main layout to take remaining height */
-        overflow: visible; /* Allow content to overflow for scrolling on html/body */
+        flex-grow: 1;
+        overflow: visible; /* Cho phép nội dung tràn ra để cuộn trên html/body */
     }
 
-    /* Leftmost Icon Bar (newly structured) */
+    /* Thanh icon ngoài cùng bên trái (cấu trúc mới) */
     .leftmost-icon-bar {
         flex: 0 0 72px; /* Chiều rộng cố định */
-        background-color: #FEF6F7; /* Màu hồng rất nhạt */
+        background-color: #FEF6F7;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 10px; /* Padding top */
+        padding-top: 10px; /* Padding trên */
         border-right: 1px solid #FADAE0;
         flex-shrink: 0;
     }
@@ -243,15 +244,15 @@
         width: 48px; /* Kích thước icon */
         height: 48px;
         border-radius: 50%;
-        background-color: #FFC0CB; /* Màu nền cho icon discord */
+        background-color: #FFC0CB;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 15px; /* Khoảng cách với các icon bên dưới */
+        margin-bottom: 15px;
     }
 
         .discord-icon-wrapper svg {
-            color: white; /* Màu icon discord */
+            color: white;
         }
 
     .icon-bar-items {
@@ -259,7 +260,7 @@
         flex-direction: column;
         align-items: center;
         gap: 8px; /* Khoảng cách giữa các icon */
-        flex-grow: 1; /* Đẩy các icon xuống dưới */
+        flex-grow: 1;
     }
 
         .icon-bar-items .icon-item {
@@ -269,7 +270,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #FFF0F2; /* Màu hồng nhạt */
+            background-color: #FFF0F2;
             cursor: pointer;
             color: #FF66AA;
             transition: background-color 0.2s ease, color 0.2s ease;
@@ -278,7 +279,7 @@
             .icon-bar-items .icon-item.active {
                 background-color: #FF66AA;
                 color: white;
-                border-radius: 16px; /* Bo góc khi active */
+                border-radius: 16px;
             }
 
             .icon-bar-items .icon-item:hover:not(.active) {
@@ -286,33 +287,33 @@
             }
 
 
-    /* Main Left Sidebar Content Area (newly structured) */
+    /* Khu vực nội dung chính của thanh bên trái (cấu trúc mới) */
     .main-left-sidebar-content {
         flex: 0 0 250px; /* Chiều rộng cố định cho sidebar trái */
-        background-color: #FFF0F2; /* Màu hồng nhạt */
+        background-color: #FFF0F2;
         display: flex;
         flex-direction: column;
         border-right: 1px solid #FADAE0;
         flex-shrink: 0;
     }
 
-    /* Friends Header */
+    /* Tiêu đề bạn bè */
     .sidebar-friends-header {
-        padding: 15px 16px; /* Padding phù hợp */
+        padding: 15px 16px;
         font-weight: 600;
         font-size: 16px;
         color: #000;
-        border-bottom: 1px solid #FADAE0; /* Đường viền dưới */
+        border-bottom: 1px solid #FADAE0;
         flex-shrink: 0;
     }
 
-    /* Direct Messages section in Left Sidebar (now main scrollable part of this sidebar) */
+    /* Phần tin nhắn trực tiếp trong thanh bên trái (hiện là phần cuộn chính của sidebar này) */
     .direct-messages-list-scrollable {
-        flex-grow: 1; /* Cho phép phần này mở rộng và cuộn */
+        flex-grow: 1;
         overflow-y: auto;
     }
 
-    .direct-messages-header-internal { /* Header riêng cho DM list */
+    .direct-messages-header-internal { /* Header riêng cho danh sách  */
         font-size: 11px;
         font-weight: 700;
         color: #000;
@@ -333,21 +334,21 @@
         .friend-items-main-sidebar .friend-item {
             display: flex;
             align-items: center;
-            padding: 6px 16px; /* Padding cho list item */
-            border-radius: 0px; /* Không bo tròn */
+            padding: 6px 16px;
+            border-radius: 0px;
             cursor: pointer;
-            margin-bottom: 0px; /* Không có margin bottom */
+            margin-bottom: 0px;
             transition: background-color 0.2s ease;
         }
 
             .friend-items-main-sidebar .friend-item.active {
-                background-color: #F8D1DA; /* Màu hồng nhạt khi active */
-                border-left: 4px solid #FF66AA; /* Vạch hồng bên trái khi active */
-                padding-left: 12px; /* Điều chỉnh padding do border-left */
+                background-color: #F8D1DA;
+                border-left: 4px solid #FF66AA;
+                padding-left: 12px;
             }
 
             .friend-items-main-sidebar .friend-item:hover:not(.active) {
-                background-color: #F8D1DA; /* Màu hồng nhạt khi hover */
+                background-color: #F8D1DA;
             }
 
         .friend-items-main-sidebar .avatar {
@@ -379,7 +380,7 @@
         }
 
 
-    /* User Panel at the bottom of Left Sidebar */
+    /* Bảng người dùng ở cuối thanh bên trái */
     .sidebar-user-panel-bottom {
         display: flex;
         align-items: center;
@@ -414,16 +415,16 @@
         }
 
 
-    /* Right Main Content Area (empty as per the image) */
+    /* Khu vực nội dung chính bên phải  */
     .right-main-area {
         flex-grow: 1;
-        background-color: #F0F0F0; /* Nền trắng hồng nhạt */
+        background-color: #F0F0F0;
         display: flex;
         flex-direction: column;
-        overflow: visible; /* Changed from auto to visible to allow full page scroll */
+        overflow: visible;
     }
 
-    /* Header của Right Main Content Area (chứa Online/All, View A, Search, Add) */
+    /* Header của khu vực nội dung chính bên phải (chứa Online/All, View A, Search, Add) */
     .main-content-header {
         background-color: #FFC0CB;
         padding: 10px 24px;
@@ -435,96 +436,94 @@
         box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         flex-shrink: 0;
         min-height: 50px;
-        width: 100%; /* Đảm bảo header chiếm toàn bộ chiều rộng */
-        box-sizing: border-box; /* Bao gồm padding vào chiều rộng */
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .header-left-section {
         display: flex;
         align-items: center;
-        gap: 10px; /* Khoảng cách giữa Friends, tabs, button */
+        gap: 10px;
     }
 
     .friends-title {
         font-weight: bold;
         font-size: 18px;
         color: #000;
-        margin-right: 15px; /* Khoảng cách với tabs */
-        border-right: 1px solid #FADAE0; /* Đường phân cách */
+        margin-right: 15px;
+        border-right: 1px solid #FADAE0;
         padding-right: 15px;
-        height: 30px; /* Đảm bảo chiều cao đường kẻ */
+        height: 30px;
         display: flex;
         align-items: center;
     }
 
     .status-tabs {
         display: flex;
-        background-color: transparent; /* Nền trong suốt */
+        background-color: transparent;
         border-radius: 9999px;
-        padding: 0; /* Loại bỏ padding */
-        gap: 0px; /* Loại bỏ gap */
+        padding: 0;
+        gap: 0px;
     }
 
     .header-tab {
         background-color: transparent;
         border: none;
-        padding: 8px 12px; /* Điều chỉnh padding */
-        border-radius: 9999px; /* Vẫn bo tròn */
+        padding: 8px 12px;
+        border-radius: 9999px;
         font-size: 14px;
         font-weight: 500;
         cursor: pointer;
         color: #888;
         transition: background-color 0.2s ease, color 0.2s ease, border-bottom 0.2s ease;
-        position: relative; /* Dùng cho underline */
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    /* Loại bỏ style cho active-pending */
+
+        .header-tab.active-pending {
+            color: #FF66AA;
+            font-weight: 600;
+            border-bottom: 2px solid #FF66AA;
+            border-radius: 0;
+        }
+
 
     .add-friend-button {
-        background-color: #FF66AA; /* Màu hồng */
-        color: white;
-        border: none;
-        padding: 8px 12px; /* Padding phù hợp */
-        border-radius: 4px; /* Bo góc nhẹ */
-        font-weight: 500;
-        cursor: pointer;
-        margin-left: 15px; /* Khoảng cách với tabs */
-        transition: background-color 0.2s ease;
+        display: none;
     }
-
-        .add-friend-button:hover {
-            background-color: #E04A9F;
-        }
 
     .header-right-section {
         display: flex;
         align-items: center;
-        gap: 15px; /* Khoảng cách giữa các icon */
+        gap: 15px;
     }
 
         .header-right-section .navbar-icon {
-            color: #000; /* Icon màu đen */
+            color: #000;
             cursor: pointer;
             width: 22px;
             height: 22px;
         }
 
-    /* Friend Requests Container (Card) */
+    /* Bảng yêu cầu kết bạn (Card) */
     .friend-requests-container {
         background-color: white;
-        border-radius: 8px; /* Bo góc nhẹ hơn */
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Đổ bóng nhẹ hơn */
-        padding: 20px; /* Điều chỉnh padding */
-        width: 80%; /* Chiều rộng tương đối */
-        max-width: 600px; /* Max width để không quá lớn */
-        margin-top: 20px; /* Đẩy xuống dưới header */
-        align-self: center; /* Căn giữa card trong main-scrollable-content */
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        padding: 20px;
+        width: 80%;
+        max-width: 600px;
+        margin-top: 0;
+        align-self: center;
     }
 
     .friend-requests-header-main {
-        font-size: 18px; /* Kích thước chữ nhỏ hơn */
+        font-size: 18px;
         font-weight: bold;
-        color: #FF66AA; /* Đã đổi màu sang hồng */
-        margin-bottom: 15px; /* Điều chỉnh margin */
+        color: #FF66AA;
+        margin-bottom: 15px;
         text-align: left;
     }
 
@@ -537,41 +536,41 @@
     .friend-request-item {
         display: flex;
         align-items: center;
-        padding: 10px 0; /* Padding trên dưới */
-        border-bottom: 1px solid #EEEEEE; /* Đường kẻ phân cách */
+        padding: 10px 0;
+        border-bottom: 1px solid #EEEEEE;
     }
 
         .friend-request-item:last-child {
-            border-bottom: none; /* Không có đường kẻ cho item cuối */
+            border-bottom: none;
         }
 
         .friend-request-item .avatar {
-            width: 40px; /* Avatar nhỏ hơn một chút */
+            width: 40px;
             height: 40px;
             border-radius: 50%;
             margin-right: 15px;
             object-fit: cover;
-            flex-shrink: 0; /* Không co lại */
+            flex-shrink: 0;
         }
 
         .friend-request-item .request-info {
             display: flex;
             flex-direction: column;
-            flex-grow: 1; /* Chiếm hết không gian còn lại */
+            flex-grow: 1;
             overflow: hidden;
         }
 
         .friend-request-item .request-name {
             font-weight: 600;
             color: #333;
-            font-size: 15px; /* Kích thước chữ nhỏ hơn */
+            font-size: 15px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
         .friend-request-item .request-status {
-            font-size: 12px; /* Kích thước chữ nhỏ hơn */
+            font-size: 12px;
             color: #777;
             white-space: nowrap;
             overflow: hidden;
@@ -581,26 +580,26 @@
         .friend-request-item .request-actions {
             display: flex;
             align-items: center;
-            gap: 8px; /* Khoảng cách nhỏ hơn */
+            gap: 8px;
             flex-shrink: 0;
         }
 
         .friend-request-item .accept-icon,
         .friend-request-item .reject-icon {
             cursor: pointer;
-            width: 22px; /* Kích thước icon nhỏ hơn */
+            width: 22px;
             height: 22px;
-            border-radius: 50%; /* Icon tròn */
-            padding: 6px; /* Tạo không gian xung quanh icon */
+            border-radius: 50%;
+            padding: 6px;
             transition: background-color 0.2s ease;
         }
 
             .friend-request-item .accept-icon:hover {
-                background-color: #D4EDDA; /* Nền xanh nhạt khi hover */
+                background-color: #D4EDDA;
             }
 
             .friend-request-item .reject-icon:hover {
-                background-color: #F8D7DA; /* Nền đỏ nhạt khi hover */
+                background-color: #F8D7DA;
             }
 
 
