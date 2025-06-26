@@ -1,5 +1,8 @@
 ﻿@page "/signup"
 @using Pages.Auth
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+<link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
+
 
 <div class="min-h-screen bg-pink-50 flex flex-col">
     <div class="flex-grow flex flex-col md:flex-row items-center justify-center px-4 py-10 md:py-16">
@@ -33,14 +36,14 @@
                     </div>
                     <div class="pt-3">
                         <label class="block text-sm mb-1 text-pink-500">Password:</label>
-                        <input type="password" class="w-full border border-gray-300 px-3 py-2" focus="ring-pink-400" />
+                        <input type="password" class="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-pink-400" focus="ring-pink-400" />
                     </div>
-                    <button class="w-full bg-pink-500 text-white font-semibold py-2 rounded hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 mt-5">
+                    <button class="bg-pink-500 text-white font-semibold px-8 py-2 rounded-full shadow-lg hover:shadow-md transition duration-300 ease-in-out mt-5 mx-auto block">
                         Sign up
                     </button>
                 </form>
                 <p class="text-xs text-center mt-4 text-gray-600">
-                    Have account? <a href="#" class="text-pink-500 font-medium hover:underline">Sign in now</a>
+                    Have account? <a href="/signin" class="text-pink-500 font-medium hover:underline">Sign in now</a>
                 </p>
             </div>
         </div>
