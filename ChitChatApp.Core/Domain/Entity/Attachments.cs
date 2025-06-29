@@ -12,11 +12,11 @@ namespace ChitChatApp.Core.Domain.Entity
     [Table("attachments")]
     public class Attachments : BaseModel
     {
-        [PrimaryKey("id", false)]
+        [PrimaryKey("id", true)]
         public int id { get; set; }
 
         [Column("message_id")]
-        public int message_id { get; set; }
+        public long message_id { get; set; }
 
         [Column("file_url")]
         public string file_url { get; set; }

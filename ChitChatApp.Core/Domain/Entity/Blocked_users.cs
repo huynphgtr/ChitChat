@@ -11,7 +11,7 @@ namespace ChitChatApp.Core.Domain.Entity
     [Table("blocked_users")]
     public class Blocked_users : BaseModel
     {
-        [PrimaryKey("id", false)]
+        [PrimaryKey("id", true)]
         public int id { get; set; }
 
         [Column("user_id")]

@@ -26,8 +26,6 @@ namespace ChitChatApp.Core.Domain.Entity
         [Column("avatar_url")]
         public string avatar_url { get; set; }
 
-        [Column("user_role")]
-        public string user_role { get; set; }
 
         [Column("status")]
         public bool status { get; set; }

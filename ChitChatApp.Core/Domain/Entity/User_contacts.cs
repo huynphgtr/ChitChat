@@ -11,7 +11,7 @@ namespace ChitChatApp.Core.Domain.Entity
     [Table("user_contacts")]
     public class User_contacts : BaseModel
     {
-        [PrimaryKey("id", false)]
+        [PrimaryKey("id", true)]
         public int id { get; set; }
 
         [Column("user_id")]
