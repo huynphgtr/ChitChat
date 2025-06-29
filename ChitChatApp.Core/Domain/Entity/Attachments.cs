@@ -19,10 +19,10 @@ namespace ChitChatApp.Core.Domain.Entity
         public long message_id { get; set; }
 
         [Column("file_url")]
-        public string file_url { get; set; }
+        public required string file_url { get; set; }
 
         [Column("file_type")]
-        public string file_type { get; set; }
+        public required string file_type { get; set; }
 
         [Column("file_size")]
         public int file_size { get; set; }

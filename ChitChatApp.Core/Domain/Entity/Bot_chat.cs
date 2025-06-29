@@ -22,10 +22,10 @@ namespace ChitChatApp.Core.Domain.Entity
         public Guid user_id { get; set; }
 
         [Column("content")]
-        public string content { get; set; }
+        public required string content { get; set; }
 
         [Column("status")]
-        public BotChatStatus status { get; set; }
+        public required string status { get; set; }
 
         [Column("created_at")]
         public DateTime created_at { get; set; }

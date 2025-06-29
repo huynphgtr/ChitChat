@@ -15,17 +15,19 @@ namespace ChitChatApp.Core.Domain.Entity
         public Guid id { get; set; }
 
         [Column("email")]
-        public string email { get; set; }
+        public required string email { get; set; }
 
         [Column("full_name")]
-        public string full_name { get; set; }
+        public required string full_name { get; set; }
 
         [Column("user_name")]
-        public string user_name { get; set; }
+        public required string user_name { get; set; }
 
         [Column("avatar_url")]
-        public string avatar_url { get; set; }
+        public required string avatar_url { get; set; }
 
+        [Column("user_role")]
+        public required string user_role { get; set; }
 
         [Column("status")]
         public bool status { get; set; }
