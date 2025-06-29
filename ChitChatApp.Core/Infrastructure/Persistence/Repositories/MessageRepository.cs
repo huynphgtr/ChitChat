@@ -97,7 +97,7 @@ public class MessageRepository : IMessageRepository
 
             if (existingStatus != null)
             {
-                existingStatus.status = MessageStatus.Read;
+                existingStatus.status = MessageStatus.Read.ToString();
                 existingStatus.updated_at = DateTime.UtcNow;
                 await _supabaseClient
                     .From<Message_status>()
@@ -105,11 +105,10 @@ public class MessageRepository : IMessageRepository
             }
             else
             {
-                var messageStatus = new Message_status
+                var messageStatus = new Message_status(MessageStatus.Read.ToString())
                 {
                     message_id = messageId,
                     receiver_id = userId,
-                    status = MessageStatus.Read,
                     updated_at = DateTime.UtcNow
                 };
 

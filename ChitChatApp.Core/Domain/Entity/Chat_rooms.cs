@@ -15,7 +15,7 @@ namespace ChitChatApp.Core.Domain.Entity
         public Guid id { get; set; }
 
         [Column("name")]
-        public required string name { get; set; }
+        public string name { get; set; }
 
         [Column("is_group")]
         public bool is_group { get; set; }
@@ -25,6 +25,16 @@ namespace ChitChatApp.Core.Domain.Entity
 
         [Column("is_deleted")]
         public bool is_deleted { get; set; }
+
+        public Chat_rooms(string name)
+        {
+            this.name = name;
+        }
+
+        public Chat_rooms() 
+        {
+            name = string.Empty;
+        }
     }
 
 }

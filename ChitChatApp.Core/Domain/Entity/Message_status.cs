@@ -22,10 +22,20 @@ namespace ChitChatApp.Core.Domain.Entity
         public Guid receiver_id { get; set; }
 
         [Column("status")]
-        public required string status { get; set; }
+        public string status { get; set; }
 
         [Column("updated_at")]
         public DateTime updated_at { get; set; }
+
+        public Message_status(string status)
+        {
+            this.status = status;
+        }
+
+        public Message_status() 
+        {
+            status = string.Empty;
+        }
     }
 
 }

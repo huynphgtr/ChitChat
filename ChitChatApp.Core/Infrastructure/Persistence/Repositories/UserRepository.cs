@@ -55,11 +55,22 @@ public class UserRepository : IUserRepository
 
     public async Task<Users> CreateUserAsync(Users user)
     {
-        var result = await _supabaseClient
-            .From<Users>()
-            .Insert(user);
-        
-        return result.Models.First();
+        try
+        {
+            Console.WriteLine($"Attempting to create user: ID={user.id}, Email={user.email}, Username={user.user_name}, FullName={user.full_name}, Status={user.status}");
+            
+            var result = await _supabaseClient
+                .From<Users>()
+                .Insert(user);
+            
+            Console.WriteLine("User created successfully in database.");
+            return result.Models.First();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error creating user in database: {ex.Message}");
+            throw;
+        }
     }
 
     public async Task<Users> UpdateUserAsync(Users user)

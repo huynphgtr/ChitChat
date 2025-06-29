@@ -22,15 +22,27 @@ namespace ChitChatApp.Core.Domain.Entity
         public Guid? sender_id { get; set; }
 
         [Column("content")]
-        public required string content { get; set; }
+        public string content { get; set; }
 
         [Column("message_type")]
-        public required string message_type { get; set; }
+        public string message_type { get; set; }
 
         [Column("sent_at")]
         public DateTime sent_at { get; set; }
 
         [Column("is_read")]
         public bool is_read { get; set; }
+
+        public Messages(string content, string message_type)
+        {
+            this.content = content;
+            this.message_type = message_type;
+        }
+
+        public Messages() 
+        {
+            content = string.Empty;
+            message_type = string.Empty;
+        }
     }
 }

@@ -66,12 +66,10 @@ public class ChatService : IChatService, IAsyncDisposable
             if (!currentUserId.HasValue)
                 return false;
 
-            var message = new Messages
+            var message = new Messages(content, messageType.ToString())
             {
                 room_id = roomId,
                 sender_id = currentUserId.Value,
-                content = content,
-                message_type = messageType,
                 sent_at = DateTime.UtcNow,
                 is_read = false
             };
