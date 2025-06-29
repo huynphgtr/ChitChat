@@ -15,7 +15,7 @@ namespace ChitChatApp.Core.Domain.Entity
         public Guid id { get; set; }
 
         [Column("name")]
-        public string name { get; set; }
+        public required string name { get; set; }
 
         [Column("is_group")]
         public bool is_group { get; set; }

@@ -15,13 +15,13 @@ namespace ChitChatApp.Core.Domain.Entity
         public int id { get; set; }
 
         [Column("bot_name")]
-        public string bot_name { get; set; }
+        public required string bot_name { get; set; }
 
         [Column("user_id")]
         public Guid user_id { get; set; }
 
         [Column("bot_api")]
-        public string bot_api { get; set; }
+        public required string bot_api { get; set; }
 
         [Column("created_at")]
         public DateTime created_at { get; set; }
