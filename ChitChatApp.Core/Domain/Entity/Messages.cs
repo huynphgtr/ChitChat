@@ -1,5 +1,6 @@
 ﻿using Supabase.Postgrest.Attributes;
 using Supabase.Postgrest.Models;
+using ChitChatApp.Core.Domain.Entity.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace ChitChatApp.Core.Domain.Entity
     [Table("messages")]
     public class Messages : BaseModel
     {
-        [PrimaryKey("id", false)]
+        [PrimaryKey("id", true)]
         public long id { get; set; }
 
         [Column("room_id")]
@@ -31,5 +32,17 @@ namespace ChitChatApp.Core.Domain.Entity
 
         [Column("is_read")]
         public bool is_read { get; set; }
+
+        public Messages(string content, string message_type)
+        {
+            this.content = content;
+            this.message_type = message_type;
+        }
+
+        public Messages() 
+        {
+            content = string.Empty;
+            message_type = string.Empty;
+        }
     }
 }
