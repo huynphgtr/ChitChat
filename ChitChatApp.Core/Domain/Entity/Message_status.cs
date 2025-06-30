@@ -1,5 +1,6 @@
 ﻿using Supabase.Postgrest.Attributes;
 using Supabase.Postgrest.Models;
+using ChitChatApp.Core.Domain.Entity.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,11 @@ namespace ChitChatApp.Core.Domain.Entity
     [Table("message_status")]
     public class Message_status : BaseModel
     {
-        [PrimaryKey("id", false)]
+        [PrimaryKey("id", true)]
         public int id { get; set; }
 
         [Column("message_id")]
-        public int message_id { get; set; }
+        public long message_id { get; set; }
 
         [Column("receiver_id")]
         public Guid receiver_id { get; set; }
@@ -25,6 +26,16 @@ namespace ChitChatApp.Core.Domain.Entity
 
         [Column("updated_at")]
         public DateTime updated_at { get; set; }
+
+        public Message_status(string status)
+        {
+            this.status = status;
+        }
+
+        public Message_status() 
+        {
+            status = string.Empty;
+        }
     }
 
 }

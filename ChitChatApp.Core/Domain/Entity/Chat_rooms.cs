@@ -25,6 +25,16 @@ namespace ChitChatApp.Core.Domain.Entity
 
         [Column("is_deleted")]
         public bool is_deleted { get; set; }
+
+        public Chat_rooms(string name)
+        {
+            this.name = name;
+        }
+
+        public Chat_rooms() 
+        {
+            name = string.Empty;
+        }
     }
 
 }
