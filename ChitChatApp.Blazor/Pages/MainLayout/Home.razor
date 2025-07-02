@@ -1,599 +1,76 @@
 ﻿@page "/home"
 
-<div class="app-container">
-    <!-- Top global header (very thin, appears to be just background color in the image) -->
-    <div class="top-global-header"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChitChat Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            border-right: 2px solid #F1CDDE;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div class="h-screen w-full flex font-sans antialiased">
 
-    <!-- Main Layout: Left Sidebar (two parts) | Right Main Content Area -->
-    <div class="main-layout">
-        <!-- Leftmost Icon Bar -->
-        <div class="leftmost-icon-bar">
-            <!-- Discord-like icon at the very top -->
-            <div class="discord-icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 13h4v2h-4v-2zm0-4h4v2h-4V11zm0-4h4v2h-4V7z"></path></svg>
-            </div>
-            <div class="icon-bar-items">
-                <!-- People icon -->
-                <div class="icon-item active">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+        <!-- Left Sidebar (DM List) -->
+        <aside class="w-64 bg-gray-100 flex-shrink-0 flex flex-col">
+            <header class="h-16 px-4 flex items-center bg-pink-200">
+                <div class="flex items-center">
+                    <span class="font-extrabold text-xl text-black">ChitChat</span>
+                    <svg class="h-8 w-8 text-black" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path></svg>
                 </div>
-                <!-- Plus icon -->
-                <div class="icon-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                </div>
-                <!-- Search icon -->
-                <div class="icon-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 17l-1.636-1.636a6 6 0 10-.707.707L17 17zM19 10a8 8 0 11-16 0 8 8 0 0116 0z"></path></svg>
-                </div>
-            </div>
-        </div>
+            </header>
 
-        <!-- Main Left Sidebar Content Area -->
-        <div class="main-left-sidebar-content">
-            <!-- Friends Header -->
-            <div class="sidebar-friends-header">
-                <strong>ChitChat</strong>
-            </div>
-
-            <!-- Scrollable Direct Messages List -->
-            <div class="direct-messages-list-scrollable">
-                <div class="direct-messages-header-internal">
-                    <span>DIRECT MESSAGES</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="add-icon-black"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <div class="flex-grow overflow-y-auto pt-2 px-2 bg-pink-100">
+                <div class="px-2 mb-2 flex justify-between items-center">
+                    <h2 class="font-bold text-xs text-gray-600 uppercase tracking-wide">Direct Messages</h2>
                 </div>
-                <ul class="friend-items-main-sidebar">
-                    <li class="friend-item">
-                        <img src="https://placehold.co/36x36/9370DB/FFFFFF?text=N" class="avatar" />
-                        <div class="friend-info">
-                            <span class="friend-name">Nelly</span>
-                            <span class="friend-status">You: happy birthday to u</span>
-                        </div>
-                    </li>
-                    <li class="friend-item">
-                        <img src="https://placehold.co/36x36/3CB371/FFFFFF?text=P" class="avatar" />
-                        <div class="friend-info">
-                            <span class="friend-name">Peppe</span>
-                            <span class="friend-status">Hi, how are you today...</span>
-                        </div>
-                    </li>
-                    <li class="friend-item">
-                        <img src="https://placehold.co/36x36/FFC0CB/000000?text=P" class="avatar" />
-                        <div class="friend-info">
-                            <span class="friend-name">Phibi</span>
-                            <span class="friend-status">Hi, how are you today...</span>
-                        </div>
-                    </li>
-                    <li class="friend-item">
-                        <img src="https://placehold.co/36x36/FFC0CB/000000?text=C" class="avatar" />
-                        <div class="friend-info">
-                            <span class="friend-name">Cap</span>
-                            <span class="friend-status">Hi, how are you today...</span>
-                        </div>
-                    </li>
-                    <li class="friend-item">
-                        <img src="https://placehold.co/36x36/FFC0CB/000000?text=W" class="avatar" />
-                        <div class="friend-info">
-                            <span class="friend-name">Wumpus</span>
-                            <span class="friend-status">Streaming Minecraft</span>
-                        </div>
-                    </li>
-                    <li class="friend-item">
-                        <img src="https://placehold.co/36x36/FFC0CB/000000?text=L" class="avatar" />
-                        <div class="friend-info">
-                            <span class="friend-name">Locke</span>
-                            <span class="friend-status">on a hike trip today!</span>
-                        </div>
-                    </li>
-                    <li class="friend-item active">
-                        <img src="https://placehold.co/36x36/9370DB/FFFFFF?text=C" class="avatar" />
-                        <div class="friend-info">
-                            <span class="friend-name">Clyde</span>
-                            <span class="friend-status">Playing Among Us</span>
-                        </div>
-                    </li>
-                    <li class="friend-item">
-                        <img src="https://placehold.co/36x36/8A2BE2/FFFFFF?text=G" class="avatar" />
-                        <div class="friend-info">
-                            <span class="friend-name">Group</span>
-                            <span class="friend-status">??????</span>
-                        </div>
-                    </li>
+                <ul class="text-black space-y-1">
+                    <li><a href="#" class="flex items-center space-x-3 px-2 py-1.5 rounded hover:bg-pink-100"><div class="w-8 h-8 rounded-md bg-indigo-200 flex items-center justify-center text-black font-bold">N</div><div><p class="font-semibold text-sm">Nelly</p><p class="text-xs text-gray-500">Listening to Spotify</p></div></a></li>
+                    <li><a href="#" class="flex items-center space-x-3 px-2 py-1.5 rounded bg-pink-200"><div class="w-8 h-8 rounded-md bg-pink-400 flex items-center justify-center text-white font-bold">P</div><div><p class="font-semibold text-sm">Peppe</p></div></a></li>
+                    <li><a href="#" class="flex items-center space-x-3 px-2 py-1.5 rounded hover:bg-pink-100"><div class="w-8 h-8 rounded-md bg-teal-300 flex items-center justify-center text-black font-bold">P</div><div><p class="font-semibold text-sm">Phibi</p><p class="text-xs text-gray-500">Playing GTA</p></div></a></li>
+                    <li><a href="#" class="flex items-center space-x-3 px-2 py-1.5 rounded hover:bg-pink-100"><div class="w-8 h-8 rounded-md bg-yellow-400 flex items-center justify-center text-black font-bold">C</div><div><p class="font-semibold text-sm">Cap</p></div></a></li>
+                    <li><a href="#" class="flex items-center space-x-3 px-2 py-1.5 rounded hover:bg-pink-100"><div class="w-8 h-8 rounded-md bg-indigo-200 flex items-center justify-center text-black font-bold">W</div><div><p class="font-semibold text-sm">Wumpus</p><p class="text-xs text-gray-500">Streaming Minecraft</p></div></a></li>
+                    <li><a href="#" class="flex items-center space-x-3 px-2 py-1.5 rounded hover:bg-pink-100"><div class="w-8 h-8 rounded-md bg-indigo-500 flex items-center justify-center text-white font-bold">L</div><div><p class="font-semibold text-sm">Locke</p><p class="text-xs text-gray-500">I'm on a hike trip today!</p></div></a></li>
+                    <li><a href="#" class="flex items-center space-x-3 px-2 py-1.5 rounded hover:bg-pink-100"><div class="w-8 h-8 rounded-md bg-indigo-500 flex items-center justify-center text-white font-bold">C</div><div><p class="font-semibold text-sm">Clyde</p><p class="text-xs text-gray-600">Playing Among Us</p></div></a></li>
+                    <li><a href="#" class="flex items-center space-x-3 px-2 py-1.5 rounded hover:bg-pink-100"><div class="w-8 h-8 rounded-md bg-blue-300 flex items-center justify-center text-black font-bold">??</div><div><p class="font-semibold text-sm">Group</p><p class="text-xs text-gray-500">??????</p></div></a></li>
                 </ul>
             </div>
 
-            <!-- User Panel at the bottom -->
-            <div class="sidebar-user-panel-bottom">
-                <div class="user-info">
-                    <img src="https://placehold.co/32x32/FFC0CB/000000?text=S" class="avatar" />
-                    <span class="username">spencercomp</span>
+            <!-- User Panel -->
+            <div class="flex-shrink-0 bg-pink-300 p-2 flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-md bg-green-300 flex items-center justify-center text-black font-bold">S</div>
+                    <p class="font-bold text-sm text-black">spencercamp</p>
                 </div>
-                <div class="user-actions">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="settings-icon"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 6.2 19.4l-.06-.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 8.6l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82-.33V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09A1.65 1.65 0 0 0 17.8 4.6l.06.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V11h1.09A1.65 1.65 0 0 0 19.4 15z" /></svg>
-                </div>
+                <svg class="h-8 w-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924-1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
             </div>
-        </div>
+        </aside>
 
-        <!-- Right Main Content Area -->
-        <div class="right-main-area">
-            <!-- Header of Right Main Content Area -->
-            <div class="main-content-header">
-                <div class="main-header-left-section">
-                    <div class="status-tabs">
-                        <button class="status-tab active">Online</button>
-                        <button class="status-tab">All</button>
-                    </div>
+        <!-- Main Content Area -->
+        <main class="flex-grow bg-pink-50 flex flex-col relative">
+            <header class="h-16 flex-shrink-0 flex items-center justify-between px-6 border-b border-gray-200 bg-pink-300">
+                <div class="flex items-center text-base font-semibold">
+                    <button class="rounded-lg px-3 py-1 text-black bg-pink-500">Online</button>
+                    <button class="rounded-lg px-3 py-1 text-black hover:text-black">All</button>
                 </div>
-                <div class="main-header-right-section">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
-                    <span class="view-as">View A</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="add-icon-black"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                </div>
-            </div>
+            </header>
 
-            <!-- Khu vực nội dung chính cuộn được (chứa danh sách bạn bè) -->
-            <div class="main-scrollable-content">
-                <ul class="friend-items-full-width">
-                    <!-- New class for full width items -->
-                    <li class="friend-item-full-width active">
-                        <img src="https://placehold.co/36x36/9370DB/FFFFFF?text=C" class="avatar" />
-                        <div class="friend-info">
-                            <span class="friend-name">Clyde</span>
-                            <span class="friend-status">Playing Among Us</span>
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="three-dots-icon"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-                    </li>
-                    <li class="friend-item-full-width">
-                        <img src="https://placehold.co/36x36/3CB371/FFFFFF?text=P" class="avatar" />
-                        <div class="friend-info">
-                            <span class="friend-name">Peppe</span>
-                            <span class="friend-status">Playing GTA</span>
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="three-dots-icon"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-                    </li>
-                    <li class="friend-item-full-width">
-                        <img src="https://placehold.co/36x36/9370DB/FFFFFF?text=N" class="avatar" />
-                        <div class="friend-info">
-                            <span class="friend-name">Nelly</span>
-                            <span class="friend-status">Listening to Spotify</span>
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="three-dots-icon"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-                    </li>
-                    <li class="friend-item-full-width">
-                        <img src="https://placehold.co/36x36/FFC0CB/000000?text=L" class="avatar" />
-                        <div class="friend-info">
-                            <span class="friend-name">Locke</span>
-                            <span class="friend-status">I'm on a hike trip today!</span>
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="three-dots-icon"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-                    </li>
-                    <li class="friend-item-full-width">
-                        <img src="https://placehold.co/36x36/3CB371/FFFFFF?text=P" class="avatar" />
-                        <div class="friend-info">
-                            <span class="friend-name">Peppe</span>
-                            <span class="friend-status">Playing Among Us</span>
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="three-dots-icon"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-                    </li>
-                    <li class="friend-item-full-width">
-                        <img src="https://placehold.co/36x36/FFC0CB/000000?text=W" class="avatar" />
-                        <div class="friend-info">
-                            <span class="friend-name">Wumpus</span>
-                            <span class="friend-status">Streaming Minecraft</span>
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="three-dots-icon"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-                    </li>
-                    <li class="friend-item-full-width">
-                        <img src="https://placehold.co/36x36/3CB371/FFFFFF?text=X" class="avatar" />
-                        <div class="friend-info">
-                            <span class="friend-name">Xavier</span>
-                            <span class="friend-status">Working on a new project</span>
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="three-dots-icon"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-                    </li>
-                    <li class="friend-item-full-width">
-                        <img src="https://placehold.co/36x36/9370DB/FFFFFF?text=Y" class="avatar" />
-                        <div class="friend-info">
-                            <span class="friend-name">Yara</span>
-                            <span class="friend-status">Reading a book</span>
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="three-dots-icon"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-                    </li>
-                    <li class="friend-item-full-width">
-                        <img src="https://placehold.co/36x36/FFC0CB/000000?text=Z" class="avatar" />
-                        <div class="friend-info">
-                            <span class="friend-name">Zoe</span>
-                            <span class="friend-status">Watching a movie</span>
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="three-dots-icon"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-                    </li>
+            <div class="flex-grow overflow-y-auto px-6 py-2">
+                <ul class="space-y-2 text-black">
+                    <li><div class="flex items-center p-2"><div class="w-10 h-10 rounded-md bg-indigo-500 flex items-center justify-center text-white font-bold">C</div><div class="ml-4"><p class="font-bold">Clyde</p><p class="text-sm text-gray-600">Playing Among Us</p></div></div></li>
+                    <li><div class="flex items-center p-2"><div class="w-10 h-10 rounded-md bg-indigo-200 flex items-center justify-center text-black font-bold">N</div><div class="ml-4"><p class="font-bold">Nelly</p><p class="text-sm text-gray-600">Listening to Spotify</p></div></div></li>
+                    <li><div class="flex items-center p-2"><div class="w-10 h-10 rounded-md bg-indigo-500 flex items-center justify-center text-white font-bold">L</div><div class="ml-4"><p class="font-bold">Locke</p><p class="text-sm text-gray-600">I'm on a hike trip today!</p></div></div></li>
+                    <li><div class="flex items-center p-2"><div class="w-10 h-10 rounded-md bg-pink-400 flex items-center justify-center text-white font-bold">P</div><div class="ml-4"><p class="font-bold">Peppe</p></div></div></li>
+                    <li><div class="flex items-center p-2"><div class="w-10 h-10 rounded-md bg-teal-300 flex items-center justify-center text-black font-bold">P</div><div class="ml-4"><p class="font-bold">Phibi</p><p class="text-sm text-gray-600">Playing GTA</p></div></div></li>
+                    <li><div class="flex items-center p-2"><div class="w-10 h-10 rounded-md bg-blue-200 flex items-center justify-center text-black font-bold">W</div><div class="ml-4"><p class="font-bold">Wumpus</p><p class="text-sm text-gray-600">Streaming Minecraft</p></div></div></li>
                 </ul>
             </div>
-        </div>
+        </main>
     </div>
-</div>
-<style>
-    /* Tổng quan */
-    html, body {
-        height: 100%; /* Make sure html and body take full height */
-        margin: 0;
-        font-family: 'Inter', sans-serif;
-        overflow: auto; /* Allow scrolling on the entire page */
-        background-color: #F0F0F0;
-    }
-
-    .app-container {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh; /* Ensure it's at least viewport height */
-        background-color: transparent;
-        overflow: visible; /* Allow content to overflow for scrolling on html/body */
-    }
-
-    /* Top global header (very thin, appears to be just background color in the image) */
-    .top-global-header {
-        background-color: #FFC0CB; /* Màu hồng đậm như trong ảnh */
-        height: 10px; /* Chiều cao rất nhỏ, giống như vạch hồng trên cùng */
-        flex-shrink: 0;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Giữ đổ bóng */
-    }
-
-    /* Main Layout (Left Sidebar + Right Main Content Area) */
-    .main-layout {
-        display: flex;
-        flex-grow: 1; /* Allows main layout to take remaining height */
-        overflow: visible; /* Allow content to overflow for scrolling on html/body */
-    }
-
-    /* Leftmost Icon Bar (newly structured) */
-    .leftmost-icon-bar {
-        flex: 0 0 72px; /* Chiều rộng cố định */
-        background-color: #FEF6F7; /* Màu hồng rất nhạt */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 10px; /* Padding top */
-        border-right: 1px solid #FADAE0;
-        flex-shrink: 0;
-    }
-
-    .discord-icon-wrapper {
-        width: 48px; /* Kích thước icon */
-        height: 48px;
-        border-radius: 50%;
-        background-color: #FFC0CB; /* Màu nền cho icon discord */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 15px; /* Khoảng cách với các icon bên dưới */
-    }
-
-        .discord-icon-wrapper svg {
-            color: white; /* Màu icon discord */
-        }
-
-    .icon-bar-items {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px; /* Khoảng cách giữa các icon */
-        flex-grow: 1; /* Đẩy các icon xuống dưới */
-    }
-
-        .icon-bar-items .icon-item {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%; /* Tròn */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #FFF0F2; /* Màu hồng nhạt */
-            cursor: pointer;
-            color: #FF66AA;
-            transition: background-color 0.2s ease, color 0.2s ease;
-        }
-
-            .icon-bar-items .icon-item.active {
-                background-color: #FF66AA;
-                color: white;
-                border-radius: 16px; /* Bo góc khi active */
-            }
-
-            .icon-bar-items .icon-item:hover:not(.active) {
-                background-color: #F8D1DA;
-            }
-
-
-    /* Main Left Sidebar Content Area (newly structured) */
-    .main-left-sidebar-content {
-        flex: 0 0 250px; /* Chiều rộng cố định cho sidebar trái */
-        background-color: #FFF0F2; /* Màu hồng nhạt */
-        display: flex;
-        flex-direction: column;
-        border-right: 1px solid #FADAE0;
-        flex-shrink: 0;
-    }
-
-    /* Friends Header */
-    .sidebar-friends-header {
-        padding: 15px 16px; /* Padding phù hợp */
-        font-weight: 600;
-        font-size: 16px;
-        color: #000;
-        border-bottom: 1px solid #FADAE0; /* Đường viền dưới */
-        flex-shrink: 0;
-    }
-
-    /* Direct Messages section in Left Sidebar (now main scrollable part of this sidebar) */
-    .direct-messages-list-scrollable {
-        flex-grow: 1; /* Cho phép phần này mở rộng và cuộn */
-        overflow-y: auto;
-    }
-
-    .direct-messages-header-internal { /* Header riêng cho DM list */
-        font-size: 11px;
-        font-weight: 700;
-        color: #000;
-        text-transform: uppercase;
-        padding: 10px 16px 5px 16px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-shrink: 0;
-    }
-
-    .direct-messages-list-scrollable .friend-items-main-sidebar {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .direct-messages-list-scrollable .friend-item {
-        display: flex;
-        align-items: center;
-        padding: 6px 16px; /* Padding cho list item */
-        border-radius: 0px; /* Không bo tròn */
-        cursor: pointer;
-        margin-bottom: 0px; /* Không có margin bottom */
-        transition: background-color 0.2s ease;
-    }
-
-        .direct-messages-list-scrollable .friend-item.active {
-            background-color: #F8D1DA; /* Màu hồng nhạt khi active */
-            border-left: 4px solid #FF66AA; /* Vạch hồng bên trái khi active */
-            padding-left: 12px; /* Điều chỉnh padding do border-left */
-        }
-
-        .direct-messages-list-scrollable .friend-item:hover:not(.active) {
-            background-color: #F8D1DA; /* Màu hồng nhạt khi hover */
-        }
-
-    .direct-messages-list-scrollable .avatar {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        margin-right: 12px;
-        object-fit: cover;
-    }
-
-    .direct-messages-list-scrollable .friend-info {
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        flex-grow: 1;
-    }
-
-    .direct-messages-list-scrollable .friend-name {
-        font-weight: 600;
-        color: #333;
-    }
-
-    .direct-messages-list-scrollable .friend-status {
-        font-size: 11px;
-        color: #888;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-
-    /* User Panel at the bottom of Left Sidebar */
-    .sidebar-user-panel-bottom {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 12px;
-        background-color: #FFC0CB;
-        border-top: 1px solid #F8D1DA;
-        flex-shrink: 0;
-    }
-
-        .sidebar-user-panel-bottom .user-info {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-            .sidebar-user-panel-bottom .user-info .avatar {
-                width: 32px;
-                height: 32px;
-                border-radius: 50%;
-                object-fit: cover;
-            }
-
-        .sidebar-user-panel-bottom .username {
-            font-weight: 700;
-            color: #000;
-        }
-
-        .sidebar-user-panel-bottom .user-actions svg {
-            color: #000;
-            cursor: pointer;
-        }
-
-
-    /* Right Main Content Area (empty as per the image) */
-    .right-main-area {
-        flex-grow: 1; /* Chiếm hết không gian còn lại */
-        background-color: #F8F8F8; /* Nền hồng nhạt/trắng */
-        display: flex;
-        flex-direction: column;
-        overflow-y: auto; /* Quan trọng: Đã chỉnh thành auto để cho phép cuộn */
-    }
-
-    /* Header of Right Main Content Area (contains Online/All, View A, Search, Add) */
-    .main-content-header {
-        background-color: #FFC0CB;
-        padding: 10px 24px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: #000;
-        font-size: 14px;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-        flex-shrink: 0;
-        min-height: 50px;
-    }
-
-    .main-header-left-section {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-    }
-
-    .status-tabs {
-        display: flex;
-        background-color: #FFDEE9;
-        border-radius: 9999px;
-        padding: 2px;
-        gap: 4px;
-    }
-
-    .status-tab {
-        background-color: transparent;
-        border: none;
-        padding: 6px 14px;
-        border-radius: 9999px;
-        font-size: 14px;
-        font-weight: 500;
-        cursor: pointer;
-        color: #888;
-        transition: background-color 0.2s ease, color 0.2s ease;
-    }
-
-        .status-tab.active {
-            background-color: #FF66AA;
-            color: white;
-        }
-
-    .main-header-right-section {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-    }
-
-        .main-header-right-section svg {
-            color: #000;
-            cursor: pointer;
-            width: 22px;
-            height: 22px;
-        }
-
-        .main-header-right-section .search-icon {
-            margin-left: 10px;
-        }
-
-        .main-header-right-section .add-icon-black {
-            color: #000;
-        }
-
-        .main-header-right-section .three-dots-icon {
-            width: 20px;
-            height: 20px;
-            margin-left: 10px;
-        }
-
-    /* Khu vực nội dung chính cuộn được (tất cả là danh sách bạn bè) */
-    .main-scrollable-content {
-        flex-grow: 1;
-        padding: 0px; /* Không padding ở đây */
-        /* Đã loại bỏ overflow-y: auto ở đây vì right-main-area đã xử lý */
-        background-color: white; /* Nền trắng như trong ảnh */
-    }
-
-    /* List item bạn bè trải dài toàn bộ chiều rộng */
-    .friend-items-full-width {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .friend-item-full-width {
-        display: flex;
-        align-items: center;
-        padding: 8px 24px;
-        border-radius: 0px;
-        cursor: pointer;
-        margin-bottom: 0px;
-        transition: background-color 0.2s ease;
-        border-bottom: 1px solid #F0F0F0;
-    }
-
-        .friend-item-full-width:hover, .friend-item-full-width.active {
-            background-color: #F8D1DA;
-        }
-
-        .friend-item-full-width .avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            margin-right: 12px;
-            object-fit: cover;
-        }
-
-        .friend-item-full-width .friend-info {
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            flex-grow: 1;
-        }
-
-        .friend-item-full-width .friend-name {
-            font-weight: 600;
-            color: #333;
-        }
-
-        .friend-item-full-width .friend-status {
-            font-size: 11px;
-            color: #888;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .friend-item-full-width .three-dots-icon {
-            color: #888;
-            margin-left: auto;
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.2s ease;
-        }
-
-        .friend-item-full-width:hover .three-dots-icon {
-            opacity: 1;
-        }
-
-    /* Cuộn tùy chỉnh */
-    ::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background-color: #FF66AA;
-        border-radius: 4px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background-color: #FFF0F2;
-    }
-</style>
+</body>
+</html>

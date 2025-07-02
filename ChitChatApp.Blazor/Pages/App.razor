@@ -12,11 +12,11 @@
 <body>
     <Router AppAssembly="@typeof(Program).Assembly">
         <Found Context="routeData">
-            <RouteView RouteData="@routeData" DefaultLayout="@typeof(Layout.Header)" />
+            <RouteView RouteData="@routeData" />
         </Found>
         <NotFound>
             <LayoutView Layout="@typeof(Layout.Header)">
-                <p class="text-center text-red-500 mt-10">Trang không tồn tại.</p>
+                <p class="text-center text-red-500 mt-10">This page is not valid</p>
             </LayoutView>
         </NotFound>
     </Router>
